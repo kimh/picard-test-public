@@ -9,6 +9,7 @@ jobs:
       - run: apt-get -y remove git
       - checkout
       - run: echo hello
+      - run: echo this is pr1
 
 
 
