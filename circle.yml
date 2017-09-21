@@ -1,14 +1,23 @@
 version: 2
+debug: true
 jobs:
   build:
     docker:
       - image: kimh/picard-trusty:5740
 
-    working_directory: /tmp/code
     steps:
-      - run: apt-get -y remove git
+      - run: echo $CIRCLE_SHA1
+      - run: mv /usr/bin/git /usr/bin/_git
+      - restore_cache:
+          keys: source-cache
       - checkout
-      - run: echo hello
-
-
-
+      - save_cache:
+          key: source-cache
+          paths:
+            - /root/project
+      - run: ls -la
+      - run: mv /usr/bin/_git /usr/bin/git
+      - run: git status
+      - run: git --no-pager show
+      - run: git --no-pager log
+      - run: git branch
