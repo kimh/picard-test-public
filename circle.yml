@@ -1,14 +1,7 @@
-version: 2
-jobs:
-  build:
-    docker:
-      - image: kimh/picard-trusty:5740
+dependencies:
+  override:
+    - echo 1
 
-    working_directory: /tmp/code
-    steps:
-      - run: apt-get -y remove git
-      - checkout
-      - run: echo hello
-
-
-
+test:
+  override:
+    - echo 2
