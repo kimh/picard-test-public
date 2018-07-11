@@ -1,6 +1,8 @@
 defaults: &defaults
   - run: echo hello
 
+- &cmd_install_node
+    run: echo hello
 version: 2
 jobs:
   build:
@@ -9,8 +11,6 @@ jobs:
 
     working_directory: /tmp/code
     steps:
-      - &cmd_install_node
-          run: echo hello
       - checkout
       - run: echo hello
       - *cmd_install_node
