@@ -1,9 +1,13 @@
 references:
   commands:
-    foo: &setup_php
+    notify_on_fail: &notify_on_fail
       name: Setup PHP
       command: |
         echo php is great
+        if [[ $CIRCLE_BRANCH = "master" ]]; then
+          echo "fail!"
+        fi
+      when: on_fail
 
 version: 2
 jobs:
@@ -14,5 +18,5 @@ jobs:
     working_directory: /tmp/code
     steps:
       - checkout
-      - run: *setup_php
+      - run: *notify_on_fail
 
