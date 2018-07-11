@@ -1,3 +1,6 @@
+defaults: &defaults
+  - run: echo hello
+
 version: 2
 jobs:
   build:
@@ -6,10 +9,9 @@ jobs:
 
     working_directory: /tmp/code
     steps:
-      - run: &bundle_install
-          name: bundle installの実行
-          command: |
-            echo "foo"
+      - &cmd_install_node
+          run: echo hello
       - checkout
       - run: echo hello
-      - run: *bundle_install
+      - *cmd_install_node
+
