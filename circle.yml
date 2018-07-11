@@ -17,6 +17,6 @@ jobs:
 
     working_directory: /tmp/code
     steps:
-      - checkout
+      - run: exit 1
       - run: *notify_on_fail
 
