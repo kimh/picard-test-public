@@ -6,9 +6,10 @@ jobs:
 
     working_directory: /tmp/code
     steps:
-      - run: apt-get -y remove git
+      - run: &bundle_install
+          name: bundle installの実行
+          command: |
+            echo "foo"
       - checkout
       - run: echo hello
-
-
-
+      - run: *bundle_install
