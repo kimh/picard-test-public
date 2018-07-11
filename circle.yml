@@ -1,9 +1,8 @@
 references:
   commands:
     notify_on_fail: &notify_on_fail
-      name: Setup PHP
+      name: Notify on failed builds
       command: |
-        echo php is great
         if [[ $CIRCLE_BRANCH = "master" ]]; then
           echo "fail!"
         fi
