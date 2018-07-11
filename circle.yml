@@ -1,8 +1,10 @@
-defaults: &defaults
-  - run: echo hello
+references:
+  commands:
+    foo: &setup_php
+      name: Setup PHP
+      command: |
+        echo php is great
 
-- &cmd_install_node
-    run: echo hello
 version: 2
 jobs:
   build:
@@ -12,6 +14,5 @@ jobs:
     working_directory: /tmp/code
     steps:
       - checkout
-      - run: echo hello
-      - *cmd_install_node
+      - run: *setup_php
 
