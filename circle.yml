@@ -1,21 +1,18 @@
-references:
-  commands:
-    notify_on_fail: &notify_on_fail
-      name: Notify on failed builds
-      command: |
-        if [[ $CIRCLE_BRANCH = "master" ]]; then
-          echo "fail!"
-        fi
-      when: on_fail
-
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: kimh/picard-trusty:5740
 
     working_directory: /tmp/code
     steps:
-      - run: exit 1
-      - run: *notify_on_fail
+      - checkout
+      - run: cat circle.yml
+      - run: ls -la
+      - run: pwd
 
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - test
