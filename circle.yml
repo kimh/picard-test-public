@@ -8,11 +8,11 @@ jobs:
     steps:
       - restore_cache:
           keys:
-            - cache-key-v2
+            - cache-key-v3
       - run: mkdir -p my-cache
       - run: echo "abc" > my-cache/cache.txt
       - save_cache:
-          key: cache-key-v2
+          key: cache-key-v3
           paths:
             - my-cache
 
