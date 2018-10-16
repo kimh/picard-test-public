@@ -6,10 +6,15 @@ jobs:
 
     working_directory: /tmp/code
     steps:
-      - checkout
-      - run: cat circle.yml
-      - run: ls -la
-      - run: pwd
+      - restore_cache:
+          keys:
+            - cache-key-v1
+      - run: mkdir -p my-cache
+      - run: echo "abc" > my-cache/cache.txt
+      - save_cache:
+          key: cache-key-v1
+          paths:
+            - my-cache
 
 workflows:
   version: 2
