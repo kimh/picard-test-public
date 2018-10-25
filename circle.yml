@@ -11,7 +11,7 @@ jobs:
           keys:
             - cache-key-v3
       - run: mkdir -p my-cache
-      -run: circleci tests glob foo/*.rb |  circleci tests split
+      - run: circleci tests glob foo/*.rb |  circleci tests split
       - save_cache:
           key: cache-key-v3
           paths:
