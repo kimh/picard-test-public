@@ -1,6 +1,7 @@
 version: 2
 jobs:
   test:
+    parallelism: 2
     docker:
       - image: kimh/picard-trusty:5740
 
