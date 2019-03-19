@@ -1,8 +1,25 @@
 version: 2
 jobs:
-  build:
-    machine: true
+  test:
+    docker:
+      - image: kimh/picard-trusty:5740
+
     working_directory: /tmp/code
     steps:
-      - run: echo "Emoji, Welcome to CircleCI!"
-      - run: echo "❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤"
+      - run: echo Hi Emoji, welcome to CircleCI🎉
+      - run: echo |
+        💚 💚 💚 
+    💚         💚
+  💚             💚
+          💚       💚
+        💚💚💚      💚
+          💚       💚
+  💚             💚
+    💚          💚
+       💚 💚 💚 
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - test
