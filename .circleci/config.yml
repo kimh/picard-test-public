@@ -8,7 +8,7 @@ jobs:
     steps:
       - run: echo Hi Emoji, welcome to CircleCI🎉
       - run:
-         command: |
+          command: |
             echo
         💚 💚 💚 
     💚         💚
