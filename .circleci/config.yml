@@ -10,16 +10,16 @@ jobs:
       - run:
           command: |
             echo "
-                   💚 💚 💚 
-                💚         💚
-              💚             💚
-                      💚       💚
-                    💚💚💚      💚
-                      💚       💚
-              💚             💚
-                💚          💚
-                   💚 💚 💚
-           " 
+                 💚 💚 💚
+              💚         💚
+            💚             💚
+                    💚       💚
+                  💚💚💚      💚
+                    💚       💚
+            💚             💚
+              💚         💚
+                 💚 💚 💚
+            "
 workflows:
   version: 2
   commit:
