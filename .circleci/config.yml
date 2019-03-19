@@ -6,7 +6,6 @@ jobs:
 
     working_directory: /tmp/code
     steps:
-      - run: echo Hi Emoji, welcome to CircleCI🎉
       - run:
           command: |
             echo "
