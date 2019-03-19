@@ -9,17 +9,17 @@ jobs:
       - run: echo Hi Emoji, welcome to CircleCI🎉
       - run:
           command: |
-            echo
-        💚 💚 💚 
-    💚         💚
-  💚             💚
-          💚       💚
-        💚💚💚      💚
-          💚       💚
-  💚             💚
-    💚          💚
-       💚 💚 💚 
-
+            echo 
+                   💚 💚 💚 
+                💚         💚
+              💚             💚
+                      💚       💚
+                    💚💚💚      💚
+                      💚       💚
+              💚             💚
+                💚          💚
+                   💚 💚 💚
+            
 workflows:
   version: 2
   commit:
