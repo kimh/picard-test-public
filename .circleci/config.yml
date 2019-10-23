@@ -30,11 +30,11 @@ workflows:
       - test:
           requires:
             - build
-      #- hold:
-      #    type: approval
-      #    requires:
-      #     - test
+      - hold:
+          type: approval
+          requires:
+           - test
       - deploy:
           type: approval
           requires:
-            - build
+            - hold
